@@ -1,0 +1,21 @@
+﻿@model CarImage
+@{
+    Layout = null;
+}
+
+<div class="row">
+    <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <img src="~/image/cars/@Model.ImageName" style="width:300px;" />
+                <p class="text-danger">Bu şəkli siləcəyinizdən əminsiniz mi ?</p>
+                <a class="btn btn-secondary" asp-area="Admin" asp-controller="Car" asp-action="Index">Ləğv et</a>
+                <form method="post" asp-area="Admin" asp-controller="Car" asp-action="DeletePhoto">
+                    <button class="btn btn-danger" type="submit">Sil</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">

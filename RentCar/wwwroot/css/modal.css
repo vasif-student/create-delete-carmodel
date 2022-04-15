@@ -1,0 +1,74 @@
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 99999999999;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  
+  .popcard {
+    background-color: white;
+    margin: 10% auto;
+    padding: 40px;
+    width: 50%;
+    text-align: center;
+    font-size: 1.2rem;
+    box-shadow: 0 2px 15px 0 black;
+    animation: popup 0.5s;
+  }
+  
+  @keyframes popup {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  
+  div.elem-group.inlined {
+    width: 49%;
+    float: left;
+    margin-left: 1%;
+    margin-bottom: 1rem;
+  }
+  
+  .elem-group.form.lbl {
+      color: black;
+    display: block;
+    padding-bottom: 10px;
+    font-size: 1.25em;
+    font-weight: bolder;
+  }
+  
+  .elem-group.form.inp {
+    color: black;
+    border-radius: 2px;
+    border: 2px solid #777;
+    box-sizing: border-box;
+    font-size: 1.25em;
+    font-family: 'Nanum Gothic';
+    width: 100%;
+    padding: 10px;
+  }
+  
+  .elem-group.form.btn {
+    height: 50px;
+    background: rgb(3, 116, 3);
+    border: none;
+    color: white;
+    font-size: 1.25em;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 1rem;
+    width: 100%;
+  }
+  
+  .elem-group.form.btn:hover {
+    background: rgb(4, 156, 4);
+  }

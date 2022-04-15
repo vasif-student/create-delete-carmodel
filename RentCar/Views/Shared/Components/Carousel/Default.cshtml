@@ -1,0 +1,21 @@
+﻿ @model List<Slider>
+    
+<!--==================== CAROUSEL START ====================-->
+<div class="carousel">
+    <Section class="img__slider">
+
+        <div class="slider__container">
+
+            @foreach (var slider in Model)
+            {
+                <div class="slide">
+                    <img src="~/image/@slider.Image">
+                </div>
+            }
+
+
+
+        </div>
+    </Section>
+</div>
+<!--==================== CAROUSEL END ====================-->

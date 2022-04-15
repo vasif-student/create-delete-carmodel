@@ -1,0 +1,65 @@
+﻿@model ContactIndexViewModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<!--==================== FORM START ====================-->
+<div class="form__container">
+
+    <form asp-action="CreateContactForm" method="post" class="contact-form">
+        <div class="form-header">
+            <h1>Bizimlə Əlaqə</h1>
+        </div>
+        <ul class="form-ul">
+            <li>
+                <label class="form-lbl" for="name"><span>Ad <span class="required-star">*</span></span></label>
+                <input class="form-inp" type="text" id="name" name="Name">
+            </li>
+            <li>
+                <label class="form-lbl" for="surname"><span>Soyad <span class="required-star">*</span></span></label>
+                <input class="form-inp" type="text" id="surname" name="Surname">
+            </li>
+            <li>
+                <label class="form-lbl" for="mail"><span>Email <span class="required-star">*</span></span></label>
+                <input class="form-inp" type="email" id="mail" name="Email">
+            </li>
+            <li>
+                <label class="form-lbl" for="phone"><span>Telefon <span class="required-star">*</span></span></label>
+                <input class="form-inp" type="tel" id="phone" name="Phone">
+            </li>
+            <li>
+                <label class="form-lbl" for="msg"><span>Mesaj</span></label>
+                <textarea name="Message" class="form-textarea" rows="4" cols="50"></textarea>
+            </li>
+            <li>
+                <input id="form-submit-btn" type="submit" value="Göndər">
+            </li>
+        </ul>
+    </form>
+
+</div>
+<!--==================== FORM END ====================-->
+
+
+<!--==================== MAP ADDRESS START ====================-->
+<div class="address__container">
+
+    <div class="item">
+        <div class="address">
+            <h1>@Model.Address.City/@Model.Address.Country</h1>
+            <p>@Model.Address.Location</p>
+            <p>Tel: @Model.Address.PhoneNumber / @Model.Address.MobileNumber</p>
+            <a href="https://www.instagram.com/vasifcoder/">@Model.Address.Mail</a>
+        </div>
+    </div>
+
+
+    <div class="item">
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3039.4286744962415!2d49.85175681535471!3d40.3771908793697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40307d079efb5163%3A0xc20aa51a5f0b5e01!2sCode%20Academy!5e0!3m2!1sen!2s!4v1647447611196!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
+
+</div>
+<!--==================== MAP ADDRESS END ====================-->

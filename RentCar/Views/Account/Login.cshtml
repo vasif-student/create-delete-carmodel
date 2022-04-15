@@ -1,0 +1,62 @@
+﻿@model LoginViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="az">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="~/css/login.css">
+
+</head>
+<body>
+
+
+    <section>
+
+        <hgroup>
+            <h1 class="greeting-header">Giriş</h1>
+            <p class="header-body">Zəhmət olmasa hesabınıza daxil olmaq üçün məlumatlarınızı daxil edin</p>
+        </hgroup>
+
+        <form method="post" asp-action="Login" class="log-form">
+
+            <div style="color:red; font-size: 15px;" asp-validation-summary="ModelOnly"></div>
+
+            <div class="group log-input">
+                <input type="email" asp-for="Email" placeholder="Email">
+            </div>
+
+            <div class="group log-input">
+                <input type="password" asp-for="Password" placeholder="Şifrə">
+            </div>
+
+            <span class="check left-align">
+                <input asp-for="RememberMe" type="checkbox">
+                <label asp-for="RememberMe">Yadda Saxla</label>
+            </span>
+
+            <a class="right-align" asp-action="Register" asp-controller="Account">Qeydiyyatın yoxdur ?</a>
+
+            <br><br>
+
+            <div class="container-log-btn">
+                <button type="submit" name="btn_submit" class="log-form-btn">
+                    <span>Giriş</span>
+                </button>
+            </div>
+
+        </form>
+
+    </section>
+
+
+
+    <script src="~/js/login.js"></script>
+</body>
+</html>

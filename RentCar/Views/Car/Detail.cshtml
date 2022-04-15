@@ -1,0 +1,182 @@
+﻿@model CarDetailViewModel
+@{
+    ViewData["Title"] = "Detail";
+    int count = 1;
+}
+
+
+
+<!--==================== DETAIL START ====================-->
+<div class="car-detail-card-wrapper">
+
+    <div class="car-detail-card">
+        <!-- card left -->
+        <div class="car-detail-imgs">
+            <div class="img-display">
+                <div class="img-showcase">
+                    @for (int i = 0; i < Model.ImageNames.Length; i++)
+                    {
+                        <img src="~/image/cars/@Model.ImageNames[i]" alt="@Model.ImageNames[i]">
+                    }
+                </div>
+            </div>
+            <div class="img-select">
+                @for (int i = 0; i < Model.ImageNames.Length; i++)
+                {
+                    <div class="img-item">
+                        <a href="#" data-id="@(i+1)">
+                            <img src="~/image/cars/@Model.ImageNames[i]" alt="@Model.ImageNames[i]">
+                        </a>
+                    </div>
+                }
+
+            </div>
+        </div>
+        <!-- card right -->
+        <div class="car-content">
+            <h2 class="car-title">@Model.CarModel.Car.BrandName <i>@Model.CarModel.ModelName</i></h2>
+            <a href="@Model.CarModel.Car.Website" class="car-link">rəsmi sayt</a>
+            <div class="car-rating">
+                @if (Model.CarModel.Rating == 5)
+                {
+                    for (int i = 1; i <= Model.CarModel.Rating; i++)
+                    {
+                        <i class="fa fa-star checked"></i>
+                    }
+                }
+                else
+                {
+                    byte dif = (byte)(5 - Model.CarModel.Rating);
+
+                    for (int i = 1; i <= Model.CarModel.Rating; i++)
+                    {
+                        <i class="fa fa-star checked"></i>
+                    }
+
+                    for (int i = 1; i <= dif; i++)
+                    {
+                        <i class="fa fa-star unchecked"></i>
+                    }
+                }
+                <span>@Model.CarModel.Rating</span>
+            </div>
+
+            <div class="car-price">
+                <p class="last-price">Köhnə Qiymət: <span>₼@Model.CarModel.OldPrice.00</span></p>
+                <p class="new-price">Yeni Qiymət: <span>₼@Model.CarModel.CurrentPrice.00</span></p>
+            </div>
+
+            <div class="car-detail">
+                <h2>Avtomobil haqqında: </h2>
+                <p>@Model.CarModel.Description</p>
+                <ul>
+                    <li>Şəhər: <span>@Model.CarModel.District.City.Name</span></li>
+                    <li>Ərazi: <span>@Model.CarModel.District.Name</span></li>
+                    <li>Marka: <span>@Model.CarModel.Car.BrandName</span></li>
+                    <li>Model: <span>@Model.CarModel.ModelName</span></li>
+                    <li>Buraxılış ili: <span>@Model.CarModel.ReleaseYear</span></li>
+                    <li>Rəng: <span>@Model.CarModel.Color</span></li>
+                    <li>Mühərrik: <span>@Model.CarModel.EngineSize L</span></li>
+                    <li>Mühərrikin gücü: <span>@Model.CarModel.HorsePower a.g.</span></li>
+                    <li>Yanacaq növü: <span>@Model.CarModel.Fuel</span></li>
+                    <li>Yürüş: <span>@Model.CarModel.MileAge km</span></li>
+                    <li>Sürət qutusu: <span>@Model.CarModel.Transmission</span></li>
+                </ul>
+            </div>
+
+            <div class="car-rent-info">
+                <button id="popupbtn" type="button" class="btn">Kirayələ</button>
+            </div>
+
+            <div class="detailpage-social-links">
+                <p>Share At: </p>
+                <a href="#">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="#">
+                    <i class="fab fa-pinterest"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--==================== DETAIL END ====================-->
+
+
+<!--==================== COMMENT START ====================-->
+<div class="comment__container">
+
+    <div class="panel-header">
+        <span id="panel-title"> Şərhlər </span>
+        <span class="counter"> 3 </span>
+    </div>
+
+    <div class="panel-collapse">
+
+        @foreach (var comment in Model.Comments)
+        {
+            <div class="comment">
+                <div class="comment-header">
+                    <img class="icon" src="~/image/faces/@comment.Image" />
+                    <span id="commentator-fullname"> @comment.UserName </span>
+                    <small id="comment-date"> @comment.CreatedDate.ToString("dd-MM-yyyy HH:mm:ss") </small>
+                </div>
+                <div class="comment-text">
+                    @comment.Text
+                </div>
+            </div>
+
+        }
+
+
+        <form method="post" asp-action="Comment" id="comment-form">
+            <input hidden name="CarModelId" value="@Model.CarModel.Id" type="text">
+            <p class="formtitle"> Rəy Bildirin </p>
+            <textarea name="Text" placeholder="Şərh"></textarea>
+            <input class="commentButton" type='submit' value='Əlavə et' />
+        </form>
+    </div>
+
+</div>
+<!--==================== COMMENT END ====================-->
+
+
+<!--==================== MODAL START ====================-->
+<div class="popup">
+    <div class="popcard">
+
+        <form asp-action="Renting" method="post">
+
+
+            <div class="elem-group inlined">
+                <label class="elem-group form lbl" for="start-date">Başlanğıc</label>
+                <input class="elem-group form inp" type="date" id="start-date" name="StartDate" required>
+            </div>
+
+            <div class="elem-group inlined">
+                <label class="elem-group form lbl" for="end-date">Son</label>
+                <input class="elem-group form inp" type="date" id="end-date" name="EndDate" required>
+            </div>
+            <hr>
+            
+            <div>
+                <input hidden name="CarModelId" value="@Model.CarModel.Id" type="text">
+            </div>
+
+            <button class="elem-group form btn" type="submit">Təsdiqlə</button>
+
+        </form>
+
+    </div>
+</div>
+<!--==================== MODAL END ====================-->

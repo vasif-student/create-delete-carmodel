@@ -1,0 +1,32 @@
+﻿@model HomeIndexViewModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!--==================== CARD START ====================-->
+<section>
+    <input id="skipCount" type="hidden" value="@ViewBag.skipCount" />
+    <div id="carModel-card-box" class="box-container">
+
+        <partial name="_CarModelPartial">
+
+    </div>
+
+</section>
+<!--==================== CARD END ====================-->
+
+
+<!--==================== LOADMORE BUTTON START ====================-->
+<div class="loadmore__btn">
+    <button id="loadmore-car-btn">Daha Çox</button>
+</div>
+<!--==================== LOADMORE BUTTON END ====================-->
+
+
+<!--==================== VIDEO SECTION START ====================-->
+<div class="video__section">
+    <div class="ads-video">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/33crJ6BiJ20" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+</div>
+<!--==================== VIDEO SECTION END ====================-->

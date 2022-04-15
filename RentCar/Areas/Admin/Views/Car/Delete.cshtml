@@ -1,0 +1,26 @@
+﻿@model CarModel
+@{
+    Layout = null;
+}
+
+<div class="row">
+    <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                @foreach (var image in Model.CarImages)
+                {
+                    <img src="~/image/cars/@image.ImageName" style="width:300px;" />
+                }
+                <h1>@Model.Car.BrandName</h1>
+                <h2>@Model.ModelName</h2>
+                <p class="text-danger">Avtomobili siləcəyinizdən əminsiniz mi ?</p>
+                <a class="btn btn-secondary" asp-area="Admin" asp-controller="Car" asp-action="Index">Ləğv et</a>
+                <form method="post" asp-area="Admin" asp-controller="Car" asp-action="Delete">
+                    <button class="btn btn-danger" type="submit">Sil</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">

@@ -1,0 +1,201 @@
+
+.carousel::before {
+    content: "VSF Avtomobil Kirayəsi Agentliyi";
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    font-size: 5rem;
+    position: absolute;
+    left: 12rem;
+    top: 12rem;
+    z-index: 21;
+    color: white;
+}
+
+.carousel::after {
+    content: "ən gözəl avtomobillər burada";
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 3rem;
+    text-decoration: underline;
+    position: absolute;
+    left: 25rem;
+    top: 18rem;
+    z-index: 21;
+    color: white;
+}
+
+
+.img__slider {
+    position: relative;
+    width: 100vw;
+    height: 400px;
+}
+.img__slider .slider__container {
+    position: absolute;
+    width: 300%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    animation: slider 16s infinite;
+}
+.img__slider .slider__container .slide {
+    position: relative;
+    width: 33.33333333%;
+    height: 100%;
+    float: left;
+    overflow: hidden
+}
+.img__slider .slider__container .slide img {
+  display: block;
+  width: 100%;
+  height: 30rem;
+  object-fit: cover;
+}
+@keyframes slider {
+    0%, 25%, 100%{left: 0}
+    
+    30%, 55%{left: -100%}
+    
+    60%, 85%{left: -200%}
+}
+
+@media(max-width: 1450px) {
+    .carousel::before {
+        content: "VSF Avtomobil Kirayəsi Agentliyi";
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-weight: bold;
+        font-size: 5rem;
+        position: absolute;
+        left: 4rem;
+        top: 15rem;
+        z-index: 21;
+        color: white;
+    }
+    
+    .carousel::after {
+        content: "ən gözəl avtomobillər burada";
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-style: italic;
+        font-weight: bold;
+        font-size: 2rem;
+        text-decoration: underline;
+        position: absolute;
+        left: 18rem;
+        top: 22rem;
+        z-index: 21;
+        color: white;
+    }
+}
+
+@media(max-width: 1170px) {
+    .carousel::before {
+        content: "VSF Avtomobil Kirayəsi Agentliyi";
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-weight: bold;
+        font-size: 4rem;
+        position: absolute;
+        left: 4rem;
+        top: 15rem;
+        z-index: 21;
+        color: white;
+    }
+    
+    .carousel::after {
+        content: "ən gözəl avtomobillər burada";
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-style: italic;
+        font-weight: bold;
+        font-size: 2rem;
+        text-decoration: underline;
+        position: absolute;
+        left: 17rem;
+        top: 21rem;
+        z-index: 21;
+        color: white;
+    }
+}
+
+@media(max-width: 950px) {
+    .carousel::before {
+        content: "VSF Avtomobil Kirayəsi Agentliyi";
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-weight: bold;
+        font-size: 3rem;
+        position: absolute;
+        left: 4.5rem;
+        top: 15rem;
+        z-index: 21;
+        color: white;
+    }
+    
+    .carousel::after {
+        content: "ən gözəl avtomobillər burada";
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-style: italic;
+        font-weight: bold;
+        font-size: 2rem;
+        text-decoration: underline;
+        position: absolute;
+        left: 10rem;
+        top: 19rem;
+        z-index: 21;
+        color: white;
+    }
+}
+
+@media(max-width: 767px) {
+    .carousel::before {
+        content: "VSF Avtomobil Kirayəsi Agentliyi";
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-weight: bold;
+        font-size: 2rem;
+        position: absolute;
+        left: 11rem;
+        top: 15rem;
+        z-index: 21;
+        color: white;
+    }
+    
+    .carousel::after {
+        content: "ən gözəl avtomobillər burada";
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-style: italic;
+        font-weight: bold;
+        font-size: 1rem;
+        text-decoration: underline;
+        position: absolute;
+        left: 17rem;
+        top: 18rem;
+        z-index: 21;
+        color: white;
+    }
+}
+
+@media(max-width: 570px) {
+    .carousel::before {
+        content: "VSF Avtomobil Kirayəsi Agentliyi";
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-weight: bold;
+        font-size: 1.8rem;
+        position: absolute;
+        left: 8rem;
+        top: 15rem;
+        z-index: 21;
+        color: white;
+    }
+    
+    .carousel::after {
+        content: "ən gözəl avtomobillər burada";
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-style: italic;
+        font-weight: bold;
+        font-size: 1rem;
+        text-decoration: underline;
+        position: absolute;
+        left: 12rem;
+        top: 18rem;
+        z-index: 21;
+        color: white;
+    }
+}

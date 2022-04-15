@@ -1,0 +1,118 @@
+﻿@model CarCreateViewModel
+@{
+    Layout = null;
+}
+
+
+<div class="content-wrapper">
+    <div class="row">
+        <div class="col-md-6 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Yeni Avtomobil Modeli Yaradın</h4>
+                    <form class="forms-sample" method="post" asp-area="Admin" asp-controller="Car" asp-action="Create" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <input asp-for="CarBrandName" type="text" list="cars" />
+                            <datalist id="cars">
+                                @foreach (var car in Model.Cars)
+                                {
+                                    <option>@car.BrandName</option>
+                                }
+                            </datalist>
+                            <label asp-for="CarBrandName" class="text-success">Avtomobil Markası</label>
+                            <span class="text-danger" asp-validation-for="CarBrandName"></span>
+                        </div>
+                        <div class="form-group">
+                            <input asp-for="CarModelName" type="text" list="carModels" />
+                            <datalist id="carModels">
+                                @foreach (var carModel in Model.CarModels)
+                                {
+                                    <option>@carModel.ModelName</option>
+                                }
+                            </datalist>
+                            <label asp-for="CarModelName" class="text-success">Avtomobil Modeli</label>
+                            <span class="text-danger" asp-validation-for="CarModelName"></span>
+                        </div>
+                        <div class="form-group">
+                            <input asp-for="City" type="text" list="cities" />
+                            <datalist id="cities">
+                                @foreach (var city in Model.Cities)
+                                {
+                                    <option>@city.Name</option>
+                                }
+                            </datalist>
+                            <label asp-for="City" class="text-success">Şəhər</label>
+                            <span class="text-danger" asp-validation-for="City"></span>
+                        </div>
+                        <div class="form-group">
+                            <input asp-for="District" type="text" list="districts" />
+                            <datalist id="districts">
+                                @foreach (var district in Model.Districts)
+                                {
+                                    <option>@district.Name</option>
+                                }
+                            </datalist>
+                            <label asp-for="District" class="text-success">Ərazi</label>
+                            <span class="text-danger" asp-validation-for="District"></span>
+                        </div>
+                        <div class="form-group">
+                            <input asp-for="Color" type="text" />
+                            <label asp-for="Color" class="text-success">Rəng</label>
+                            <span class="text-danger" asp-validation-for="Color"></span>
+                        </div>
+                        <div class="form-group">
+                            <input asp-for="ReleaseYear" type="number" />
+                            <label asp-for="ReleaseYear" class="text-success">Buraxılış ili</label>
+                            <span class="text-danger" asp-validation-for="ReleaseYear"></span>
+                        </div>
+                        <div class="form-group">
+                            <input asp-for="EngineSize" type="number" />
+                            <label asp-for="EngineSize" class="text-success">Mühərrik</label>
+                            <span class="text-danger" asp-validation-for="EngineSize"></span>
+                        </div>
+                        <div class="form-group">
+                            <input asp-for="HorsePower" type="number" />
+                            <label asp-for="HorsePower" class="text-success">Mühərrikin gücü</label>
+                            <span class="text-danger" asp-validation-for="HorsePower"></span>
+                        </div>
+                        <div class="form-group">
+                            <input asp-for="Fuel" type="text" />
+                            <label asp-for="Fuel" class="text-success">Yanacaq</label>
+                            <span class="text-danger" asp-validation-for="Fuel"></span>
+                        </div>
+                        <div class="form-group">
+                            <input asp-for="MileAge" type="number" />
+                            <label asp-for="MileAge" class="text-success">Yürüş</label>
+                            <span class="text-danger" asp-validation-for="MileAge"></span>
+                        </div>
+                        <div class="form-group">
+                            <input asp-for="Transmission" type="text" />
+                            <label asp-for="Transmission" class="text-success">Sürət qutusu</label>
+                            <span class="text-danger" asp-validation-for="Transmission"></span>
+                        </div>
+                        <div class="form-group">
+                            <input asp-for="Price" type="number" />
+                            <label asp-for="Price" class="text-success">Qiymət</label>
+                            <span class="text-danger" asp-validation-for="Price"></span>
+                        </div>
+                        <div class="form-group">
+                            <textarea asp-for="Description" class="form-control w-25" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            <label asp-for="Description" class="text-success">Haqqında</label>
+                            <span class="text-danger" asp-validation-for="Description"></span>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" asp-for="Files" accept="images/*" multiple placeholder="Images">
+                            <label asp-for="Files" class="text-success">Şəkil</label>
+                            <span class="text-danger" asp-validation-for="Files"></span>
+                        </div>
+                        <button type="submit" class="btn btn-primary me-2">Yarat</button>
+                        <a asp-action="Index" asp-controller="Car" asp-area="Admin" class="btn btn-light">Ləğv et</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">

@@ -1,0 +1,44 @@
+﻿@model List<CarModel>
+@{
+    ViewData["Title"] = "Index";
+    int order = 0;
+}
+
+
+<div class="table-responsive">
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Avtomobilin Markası</th>
+                <th>Avtomobilin Modeli</th>
+                <th>Şəkli</th>
+                <th>Əməliyyatlar</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var carModel in Model)
+            {
+                order++;
+                <tr>
+                    <td>@order</td>
+                    <td>@carModel.Car.BrandName</td>
+                    <td>@carModel.ModelName</td>
+                    @foreach (var image in carModel.CarImages)
+                    {
+                        <td><img src="~/image/cars/@image.ImageName" style="width:200px; height:200px; border-radius:50%; object-fit:cover;" /></td>
+                    }
+                    <td>
+                        <a class="btn btn-primary" asp-controller="Car" asp-action="CarDetail" asp-route-id="@carModel.Id">Detallar</a>
+                        <a class="btn btn-warning" asp-controller="Car" asp-action="Update" asp-route-id="@carModel.Id">Yenilə</a>
+                        <a class="btn btn-danger" asp-controller="Car" asp-action="Delete" asp-route-id="@carModel.Id">Sil</a>
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>
+

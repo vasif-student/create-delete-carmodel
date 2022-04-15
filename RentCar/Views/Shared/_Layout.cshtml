@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--=============== BOOTSTRAP ===============-->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script> -->
+    <!--=============== FONT AWESOME ===============-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="~/css/style.css">
+    <link rel="stylesheet" href="~/css/header.css">
+    <link rel="stylesheet" href="~/css/carousel.css">
+    <link rel="stylesheet" href="~/css/card.css">
+    <link rel="stylesheet" href="~/css/darkmode.css">
+    <link rel="stylesheet" href="~/css/footer.css">
+    <link rel="stylesheet" href="~/css/detail.css">
+    <link rel="stylesheet" href="~/css/accordion.css">
+    <link rel="stylesheet" href="~/css/loadmore.css">
+    <link rel="stylesheet" href="~/css/contact.css">
+    <link rel="stylesheet" href="~/css/map.css">
+    <link rel="stylesheet" href="~/css/modal.css">
+    <link rel="stylesheet" href="~/css/payment.css">
+    <link rel="stylesheet" href="~/css/videosection.css">
+    <link rel="stylesheet" href="~/css/partners.css">
+    <link rel="stylesheet" href="~/css/comment.css">
+    <link rel="stylesheet" href="~/css/about.css">
+
+
+    <!--=============== ICON ===============-->
+    <link rel="shortcut icon" href="~/image/icons/red-car-icon-removebg-preview.png" type="image">
+    <title>vsf car rental agency</title>
+</head>
+<body>
+
+    <div class="wrapper">
+
+        <!--==================== HEADER START ====================-->
+        @await Component.InvokeAsync("Header")
+        <!--==================== HEADER END ====================-->
+        <!--==================== CAROUSEL START ====================-->
+        @await Component.InvokeAsync("Carousel")
+        <!--==================== CAROUSEL END ====================-->
+        <!--==================== ACCORDION START ====================-->
+        @await Component.InvokeAsync("Accordion")
+        <!--==================== ACCORDION END ====================-->
+
+
+        @RenderBody()
+
+        <!--==================== FOOTER START ====================-->
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="footer__col">
+                        <h4>Şirkət</h4>
+                        <ul>
+                            <li>
+                                <a href="#">Haqqımızda</a>
+                            </li>
+                            <li>
+                                <a href="#">Xidmətlərimiz</a>
+                            </li>
+                            <li>
+                                <a href="#">Gizlilik Siyasəti</a>
+                            </li>
+                            <li>
+                                <a href="#">Tərəfdaşlıq Proqramı</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer__col">
+                        <h4>Kömək</h4>
+                        <ul>
+                            <li>
+                                <a href="#">Sual-Cavab</a>
+                            </li>
+                            <li>
+                                <a href="#">Daşınma</a>
+                            </li>
+                            <li>
+                                <a href="#">Kompensasiya</a>
+                            </li>
+                            <li>
+                                <a href="#">Sifariş Statusu</a>
+                            </li>
+                            <li>
+                                <a href="payment.html">Ödəniş Növləri</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer__col">
+                        <h4>Onlayn Kirayə</h4>
+                        <ul>
+                            <li>
+                                <a href="#">Avtomobil</a>
+                            </li>
+                            <li>
+                                <a href="#">Saat</a>
+                            </li>
+                            <li>
+                                <a href="#">Ev</a>
+                            </li>
+                            <li>
+                                <a href="#">Paltar</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer__col">
+                        <h4>Bizi İzləyin</h4>
+                        <div class="social-links">
+                            <a href="#">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://www.youtube.com/channel/UCPEmMq_L2w9aLN97Vvy_V0Q/videos">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="https://www.instagram.com/vasifcoder/">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; Vasif Hüseynov 2022</p>
+            </div>
+        </footer>
+        <!--==================== FOOTER END ====================-->
+
+
+    </div>
+
+    <!--=============== JAVASCRIPT ===============-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="~/js/detail.js"></script>
+    <script src="~/js/main.js"></script>
+    <script src="~/js/request.js"></script>
+</body>
+</html>

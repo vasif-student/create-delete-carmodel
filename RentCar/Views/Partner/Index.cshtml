@@ -1,0 +1,29 @@
+﻿@model List<PartnerInfoCard>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!--==================== PARTNERS START ====================-->
+<div class="partners-brand-body">
+
+    <div class="partners_brand_container">
+
+        @foreach (var infocard in Model)
+        {
+            <div class="container fade-in">
+                <img src="~/image/@infocard.Image" alt="@infocard.BrandName" class="image">
+                <div class="brand-detail">
+                    <div class="text">
+                        <p><b>@infocard.BrandName</b></p>
+                        @Html.Raw(infocard.Description)
+                    </div>
+                </div>
+                <div class="brand-info">
+                    <p>@infocard.BrandName</p>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>
+<!--==================== PARTNERS END ====================-->

@@ -1,0 +1,59 @@
+﻿@model List<CarModel>
+
+@{
+    ViewData["Title"] = "SearchCar";
+}
+
+<section>
+    <div class="box-container">
+        @foreach (var carModel in Model)
+        {
+            @foreach (var carImage in carModel.CarImages)
+            {
+                <div class="box">
+                    <div class="image">
+                        <img src="~/image/cars/@carImage.ImageName" alt="@carImage.ImageName">
+                    </div>
+                    <div class="info">
+                        <h4>@carModel.Car.BrandName</h4>
+                        <h5>@carModel.ModelName</h5>
+                        <mark>@carModel.District.City.Name/@carModel.District.Name</mark>
+                        <p>@carModel.Description</p>
+                        <span>₼@carModel.CurrentPrice.00 günlük <s>₼@carModel.OldPrice.00</s></span>
+                        <div class="stars">
+                            @if (carModel.Rating == 5)
+                            {
+                                for (int i = 1; i <= 5; i++)
+                                {
+                                    <span class="fa fa-star checked"></span>
+                                }
+                            }
+                            else
+                            {
+                                byte dif = (byte)(5 - carModel.Rating);
+
+                                for (int i = 1; i <= carModel.Rating; i++)
+                                {
+                                    <span class="fa fa-star checked"></span>
+                                }
+
+                                for (int i = 1; i <= dif; i++)
+                                {
+                                    <span class="fa fa-star unchecked"></span>
+                                }
+
+                            }
+                        </div>
+                    </div>
+                    <div class="btn">
+                        <a asp-action="Detail" asp-controller="Car" asp-route-id="@carModel.Id">Detallı</a>
+                    </div>
+                </div>
+            }
+        }
+
+
+    </div>
+
+</section>
+

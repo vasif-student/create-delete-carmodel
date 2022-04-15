@@ -1,0 +1,30 @@
+.loadmore__btn {
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 4rem;
+  }
+  
+  .loadmore__btn button {
+    width: 16rem;
+    height: 3.2rem;
+    border-radius: 8px;
+    border: 1px solid white;
+    background-color: rgb(5, 117, 5);
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(209, 204, 204);
+    transition: all ease-in-out .3s;
+  }
+  
+  .loadmore__btn button:hover {
+    background-color: rgb(2, 131, 2);
+    cursor: pointer;
+    color: white;
+  }
+
+  .loadmore__btn button:active {
+    background-color: rgb(2, 69, 131);
+    cursor: pointer;
+    color: white;
+  }
+  

@@ -1,0 +1,134 @@
+
+hgroup {
+  text-align: center;
+  margin-top: 2em;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: #34495e;
+}
+
+hgroup .greeting-header {
+    font-size: 2rem;
+}
+
+
+.container-log-btn span {
+    font-size: 0.95em;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    line-height: 14px;
+    text-transform: uppercase;
+}
+
+.log-form {
+  width: 30rem;
+  margin: 3em auto;
+  padding: 3em 2em 2em 2em;
+  border: 1px solid #ebebeb;
+  box-shadow: rgba(0, 0, 0, 0.14902) 0px 1px 1px 0px,
+    rgba(0, 0, 0, 0.09804) 0px 1px 2px 0px;
+}
+
+.group {
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.log-input {
+  font-size: 1rem;
+  padding: 10px 10px 10px 5px;
+  -webkit-appearance: none;
+  display: block;
+  background: #fafafa;
+  color: #34495e;
+  width: 100%;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid #757575;
+}
+
+.log-input:focus {
+  outline: none;
+}
+
+.log-form a {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: #34495e;
+}
+
+.left-align {
+  float: left;
+  text-align: left;
+}
+
+.right-align {
+  float: right;
+  text-align: right;
+  text-decoration: none;
+}
+
+
+.container-log-btn {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.log-form-btn {
+  width: 100%;
+  height: 3rem;
+  border: 0px;
+  border-radius: 5px;
+  background-color: #34495e;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.log-form-btn:hover {
+  background-color: #425970;
+}
+
+.log-form-btn:active {
+  background-color: #319b92;
+}
+
+
+input[type="email"],
+input[type="password"] 
+{
+  background: transparent;
+  border: none;
+  font-family: "Montserrat";
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  line-height: 24px;
+  height: 42px;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-transform: none;
+  width: 93%;
+}
+
+input[type="checkbox"]:not(:checked) + label,
+input[type="checkbox"]:checked + label {
+  color: #34495e;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  padding-left: 10px;
+  padding-top: 6px;
+  position: relative;
+  text-transform: uppercase;
+}

@@ -1,0 +1,140 @@
+
+div.partners-brand-body {
+	width: 100%;
+	height: 100%;
+	margin: 5rem 0px;
+	overflow: hidden;
+	position: relative;
+}
+
+.partners_brand_container {
+	margin: auto;
+	padding-top: 20px;
+	text-align: center;
+}
+
+.brand-detail .text p {
+	color: black;
+	text-align: left;
+	font-family: "Roboto", sans-serif;
+}
+
+.brand-detail .text b {
+	color: black;
+	font-weight: bold;
+}
+
+div.partners-brand-body .img {
+	position: absolute;
+	animation: slideshow 16s infinite;
+	opacity: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.partners_brand_container .container {
+	margin: 2%;
+	margin-bottom: 30px;
+	display: inline-block;
+	width: 300px;
+	background-color: rgb(255, 255, 255);
+	position: relative;
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+	transition: 0.35s;
+	cursor: pointer;
+}
+
+.partners_brand_container .container .image {
+	opacity: 1;
+	display: block;
+	width: 100%;
+	height: 250px;
+	transition: 0.5s ease;
+}
+
+.partners_brand_container .container .brand-detail {
+	transition: 0.5s ease;
+	opacity: 0;
+	position: absolute;
+	top: 130px;
+	left: 130px;
+	transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+}
+
+.container:hover .image {
+	opacity: 0.25;
+}
+
+.container:hover .brand-detail {
+	opacity: 1;
+}
+
+.container:hover {
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 10px 30px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container:focus {
+	box-shadow: 0px 0px 0px0px;
+	box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.container:focus .image {
+	opacity: 1;
+	transition: 0.35s ease;
+}
+
+.partners_brand_container .container .brand-info {
+	text-align: center;
+	font-family: "Roboto", sans-serif;
+}
+
+.partners_brand_container .container .brand-info p {
+    color: black;
+	font-weight: bold;
+	font-size: 25px;
+    padding: 10px;
+}
+
+@media only screen and (max-width: 767px) {
+	
+	.partners_brand_container .container .brand-detail {
+		transition: 0.5s ease;
+		opacity: 0;
+		position: absolute;
+		top: 40%;
+		left: 42%;
+		font-size: 0.9rem;
+		transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
+	}
+
+    .partners_brand_container .container .brand-info p {
+        color: black;
+        font-weight: bolder;
+        font-size: 20px;
+        padding: 8px;
+    }
+}
+
+
+@media only screen and (max-width: 480px) {
+	
+	.partners_brand_container .container .brand-detail {
+		transition: 0.5s ease;
+		opacity: 0;
+		position: absolute;
+		top: 40%;
+		left: 42%;
+		font-size: 0.9rem;
+		transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
+	}
+
+    .partners_brand_container .container .brand-info p {
+        color: black;
+        font-weight: bolder;
+        font-size: 15px;
+        padding: 5px;
+    }
+}

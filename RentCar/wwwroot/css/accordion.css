@@ -1,0 +1,138 @@
+.accordion {
+    width: 90%;
+    max-width: 80rem;
+    margin: 2rem auto;
+}
+
+.accordion-item {
+    color: #111;
+    margin: 1rem 0;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+    background-color: #34495e;
+}
+
+.accordion-item-header {
+    padding: 0.5rem 3rem 0.5rem 1rem;
+    min-height: 3.5rem;
+    line-height: 1.25rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.accordion-item-header::after {
+    content: "\002B";
+    font-size: 2rem;
+    color: white;
+    position: absolute;
+    right: 1rem;
+    transition: transform 0.2s ease-in-out;
+}
+
+.accordion-item-header.active::after {
+    content: "\2212";
+}
+
+.accordion-item-header h1 {
+    color: white;
+    margin: auto;
+}
+
+.accordion-item-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.accordion-item-body-content {
+    padding: 1rem;
+    line-height: 1.5rem;
+    border-top: 1px solid;
+    border-image: linear-gradient(to right, transparent, #34495e, transparent) 1;
+}
+
+.accordion-item-header.active+.accordion-item-body {
+    max-height: 1000px;
+}
+
+
+/* search select  */
+
+.accordion-item-body-content .search__select {
+    display: flex;
+    width: 100%;
+}
+.accordion-item-body-content .search__select .select__brand, .select__model, .select__city {
+    width: 10rem;
+    margin-left: 1rem;
+    height: 2rem;
+    border-radius: 0.3rem;
+    color: white;
+    background-color: #34495e;
+}
+
+.accordion-item-body-content .search__select input {
+    border-radius: 0.3rem;
+    border: 1px solid gray;
+    padding-left: 2px;
+    height: 1.82rem;
+    color: white;
+    background-color: #34495e;
+}
+
+.accordion-item-body-content .search__select label {
+    margin-left: 1rem;
+    margin-right: 0.6rem;
+}
+
+.accordion-item-body-content .submit {
+    text-align: center;
+}
+
+.accordion-item-body-content .submit .btn {
+    background-color: rgb(0, 63, 146);
+    color: white;
+    font-weight: bold;
+    border: none;
+    width: 250px;
+    height: 40px;
+    font-size: 15px;
+    cursor: pointer;
+    border: 2px solid rgb(1, 21, 112);
+    border-radius: 0.3rem;
+}
+
+.accordion-item-body-content .submit .btn:hover {
+    background-color: rgb(0, 110, 255);
+    border-color: white;
+}
+
+/* price input */
+.accordion-item-body-content .search__select #maxPrice, #minPrice {
+  width: 3rem;
+  height: 1.75rem;
+}
+
+.accordion-item-body-content .search__select span {
+  margin-left: 0.5rem;
+}
+
+
+@media (max-width: 767px) {
+    
+    html {
+        font-size: 14px;
+    }
+
+    .accordion-item-body-content .submit .btn {
+        width: 100%;
+    }
+
+}
+
+
+
+

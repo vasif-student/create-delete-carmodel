@@ -1,0 +1,52 @@
+﻿@model AboutIndexViewModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!--==================== ABOUT START ====================-->
+<div class="about__container">
+
+    <!-- Header -->
+    <div class="about-header">
+        <img class="headerImage" src="~/image/@Model.AboutSection.HeaderImage" alt="Illustrated Tardigrade">
+        <div class="h1" id="title">@Model.AboutSection.HeaderTitle</div>
+    </div>
+
+    <div class="row">
+
+        <!-- Left column -->
+        <div class="left-column">
+            <div id="img-div">
+                <figure>
+                    <img id="image" class="sideImage" src="~/image/@Model.AboutSection.SideImage" alt="Tardigrade image">
+                    <figcaption id="img-caption">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae est maxime mollitia at vel ipsam.</figcaption>
+                </figure>
+            </div>
+        </div>
+
+        <!-- Main -->
+        <main class="about-main" id="main">
+            <div class="h2">Lorem ipsum dolor sit amet.</div>
+            <p id="tribute-info">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit,lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat?
+                <br><br>Lorem ipsum dolor sit consectetur adipisicing elit. Lorem ipsum dolor sit consectetur adipisicing elit Numquam, mollitia?<br><br>
+                <iframe width="560" height="315" src="@Model.AboutSection.Video" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                <br><br>
+
+                Daha ətraflı oxuyun <a id="tribute link" href="@Model.AboutSection.ForMoreDetails" target="_blank"> Wikipedia page. </a>
+            </p>
+        </main>
+
+        <!-- Right column -->
+        <div class="right-column">
+            <div class="h3">Xəbərlər lorem, ipsum.</div>
+            <p>
+                <li><a id="news link" href="@Model.AboutSection.News" target="_blank">Tardigrades land on the moon</a></li>
+            </p>
+        </div>
+
+    </div>
+
+</div>
+<!--==================== ABOUT END ====================-->

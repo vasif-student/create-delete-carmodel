@@ -1,0 +1,111 @@
+﻿@model CarDetailViewModel
+@{
+    Layout = null;
+    int order = 0;
+}
+
+<h1 class="text-center">@Model.CarModel.Car.BrandName @Model.CarModel.ModelName</h1>
+<div class="car-rating text-center">
+        @for (int i = 1; i <= Model.CarModel.Rating; i++)
+        {
+            <i class="fa fa-star checked"></i>
+        }
+</div>
+
+
+<table style="margin:auto;" class="table table-bordered border-primary mt-4 mb-5">
+    <thead>
+        <tr>
+            <th scope="col">Marka adı</th>
+            <th scope="col">Model adı</th>
+            <th scope="col">Şəhər</th>
+            <th scope="col">Ərazi</th>
+            <th scope="col">Köhnə Qiymət</th>
+            <th scope="col">Yeni Qiymət</th>
+            <th scope="col">Buraxılış ili</th>
+            <th scope="col">Rəng</th>
+            <th scope="col">Mühərrik</th>
+            <th scope="col">Mühərrikin gücü</th>
+            <th scope="col">Yanacaq növü</th>
+            <th scope="col">Yürüş</th>
+            <th scope="col">Sürət qutusu</th>
+            <th scope="col">Haqqında</th>
+            <th scope="col">Əməliyyatlar</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Model.CarModel.Car.BrandName</td>
+            <td>@Model.CarModel.ModelName</td>
+            <td>@Model.CarModel.District.City.Name</td>
+            <td>@Model.CarModel.District.Name</td>
+            <td>₼@Model.CarModel.OldPrice.00</td>
+            <td>₼@Model.CarModel.CurrentPrice.00</td>
+            <td>@Model.CarModel.ReleaseYear</td>
+            <td>@Model.CarModel.Color</td>
+            <td>@Model.CarModel.EngineSize L</td>
+            <td>@Model.CarModel.HorsePower a.g.</td>
+            <td>@Model.CarModel.Fuel</td>
+            <td>@Model.CarModel.MileAge km</td>
+            <td>@Model.CarModel.Transmission</td>
+            <td>@Model.CarModel.Description</td>
+
+            <td>
+                <a class="text-warning font-weight-bold" asp-controller="Car" asp-action="Update" asp-route-id="@Model.CarModel.Id">Yenilə</a><br />
+                <a class="text-danger font-weight-bold" asp-controller="Car" asp-action="Delete" asp-route-id="@Model.CarModel.Id">Sil</a>
+            </td>
+        </tr>
+
+
+    </tbody>
+</table>
+
+@*<a asp-action="AddPhotos" asp-controller="Car" asp-area="Admin" asp-route-id="@Model.CarModel.Id" class="link-primary ml-5 font-weight-bold" style="text-decoration: underline; text-underline-offset: 1px;">+ Şəkil əlavə et</a>*@
+
+
+
+
+<form method="post" asp-area="Admin" asp-controller="Car" asp-action="AddPhotos" enctype="multipart/form-data">
+    <input accept="images/*" name="Files" class="form-control w-25 ml-4" type="file" id="formFileMultiple" multiple />
+    <div class="col-lg-6">
+        <input hidden name="CarModelId" value="@Model.CarModel.Id" type="text">
+    </div>
+    <button type="submit" class="btn btn-primary ml-4 mt-4">Şəkil əlavə et</button>
+</form>
+
+
+
+
+
+<div class="table-responsive mt-4">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Şəkil</th>
+                <th>Əməliyyatlar</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var carImage in Model.CarModel.CarImages)
+            {
+                order++;
+                <tr>
+                    <td>@order</td>
+                    <td><img src="~/image/cars/@carImage.ImageName" style="width:300px; object-fit:cover;" /></td>
+                    <td>
+                        @*<a class="btn btn-warning" asp-area="Admin" asp-controller="Car" asp-action="Update" asp-route-id="@carImage.Id">Yenilə</a>*@
+                        <a class="btn btn-danger" asp-area="Admin" asp-controller="Car" asp-action="DeletePhoto" asp-route-id="@carImage.Id">Sil</a>
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/js/bootstrap.min.js"></script>
+<!-- font awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />

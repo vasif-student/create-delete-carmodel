@@ -1,0 +1,68 @@
+﻿@model RegisterViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="az">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qeydiyyat</title>
+    <link rel="stylesheet" href="~/css/register.css">
+
+</head>
+<body>
+
+
+    <section>
+
+        <hgroup>
+            <h1 class="greeting-header">Hesab aç</h1>
+        </hgroup>
+
+        <form method="post" class="log-form" asp-action="Register">
+
+            <div style="color:red; font-size: 15px;" asp-validation-summary="ModelOnly"></div>
+
+            <div class="group log-input">
+                <input asp-for="UserName" type="text" placeholder="İstifadəçi adı">
+                <span style="color:red; font-size: 15px;" asp-validation-for="UserName"></span>
+            </div>
+
+            <div class="group log-input">
+                <input asp-for="Email" type="email" placeholder="Email">
+                <span style="color:red; font-size: 15px;" asp-validation-for="Email"></span>
+            </div>
+
+            <div class="group log-input">
+                <input asp-for="Password" type="password" placeholder="Şifrə">
+                <span style="color:red; font-size: 15px;" asp-validation-for="Password"></span>
+            </div>
+
+            <div class="group log-input">
+                <input asp-for="ConfirmPassword" placeholder="Şifrə (təkrar)">
+                <span style="color:red; font-size: 15px;" asp-validation-for="ConfirmPassword"></span>
+            </div>
+
+            <div class="back-to-login">
+                <a asp-action="Login" asp-controller="Account">Qeydiyyatım artıq var >></a>
+            </div>
+
+
+            <div class="container-log-btn">
+                <button type="submit" name="btn_submit" class="log-form-btn">
+                    <span>Qeydiyyatdan keç</span>
+                </button>
+            </div>
+
+        </form>
+
+    </section>
+
+
+    <script src="~/js/register.js"></script>
+</body>
+</html>
